@@ -1,24 +1,32 @@
-<script>
-    export let rows;
-    export let headers;
+<script lang="ts">
+    type UnitData = (string|number)[];
+
+    export let rows: UnitData[];
+    export let headers: string[];
 
     let sortColumn = -1;
-    let sortReverse = false;
+    let sortDirection = 1;
 
-    function changeSort(column) {
+    function changeSort(column: number) {
         if (sortColumn === column) {
-            sortReverse = !sortReverse;
+            sortDirection *= -1;
         } else {
             sortColumn = column;
-            sortReverse = false;
+            sortDirection = 1;
         }
     }
 
-    $: sorter = typeof rows[0][sortColumn] == "string"
-        ? (a, b) => a.localeCompare(b)
-        : (a, b) => a - b;
+    function sorter<T>(a: T, b: T): number {
+        if (typeof a === "string" && typeof b === "string") {
+            return a.localeCompare(b);
+        } else if (typeof a === "number" && typeof b === "number") {
+            return a - b;
+        } else {
+            return 0;
+        }
+    }
 
-    $: sortedRows = [...rows].sort((a, b) => sortReverse ? sorter(b[sortColumn], a[sortColumn]) : sorter(a[sortColumn], b[sortColumn]));
+    $: sortedRows = [...rows].sort((a: UnitData, b: UnitData) => sorter(a[sortColumn], b[sortColumn]) * sortDirection);
 </script>
 
 <table>
