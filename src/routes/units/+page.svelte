@@ -1,0 +1,7 @@
+<script>
+    import DataTable from "../../lib/data-table.svelte";
+
+    export let data;
+</script>
+
+<DataTable rows={data.units} headers={["Name", "Level", "Class", "HP", "Str", "Mag", "Dex", "Spd", "Def", "Res", "Lck", "Bld", "Mov"]} />
