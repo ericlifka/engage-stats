@@ -1,7 +1,7 @@
 <nav>
     <ul>
-        <li><a href="/units">Units</a></li>
         <li><a href="/classes">Classes</a></li>
+        <li><a href="/units">Units</a></li>
     </ul>
 </nav>
 <content>
@@ -20,13 +20,30 @@
         }
         a,
         a:hover,
-        a:visited {
+        a:visited,
+        button {
             color: #DDD;
             text-decoration: none;
+            font-family: sans-serif;
+            font-size: 18px;
         }
         a:active {
             color: #777;
             text-decoration: underline;
+        }
+        button {
+            border: 1px solid #667;
+            border-radius: 3px;
+            background-color: #334;
+            padding: 12px 16px 8px 16px;
+            cursor: pointer;
+            
+        }
+        button.active {
+            background-color: #445;
+            border-color: #445;
+            color: #777;
+            cursor: default;
         }
     </style>
 </svelte:head>

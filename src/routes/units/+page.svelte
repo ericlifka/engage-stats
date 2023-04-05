@@ -4,4 +4,4 @@
     export let data;
 </script>
 
-<DataTable rows={data.units} headers={["Name", "Level", "Class", "HP", "Str", "Mag", "Dex", "Spd", "Def", "Res", "Lck", "Bld", "Mov"]} />
+<DataTable rows={data.units} headers={["Unit", "Level", "Class", "HP", "Str", "Mag", "Dex", "Spd", "Def", "Res", "Lck", "Bld", "Mov"]} />
