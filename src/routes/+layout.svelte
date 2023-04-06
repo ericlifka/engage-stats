@@ -41,8 +41,8 @@
         }
         button.active {
             background-color: #445;
-            border-color: #445;
-            color: #777;
+            color: white;
+            background-color: #888;
             cursor: default;
         }
     </style>
