@@ -3,6 +3,7 @@
 
     export let data: UnitData[];
     export let headers: string[];
+    export let disableSort: boolean;
 
     let sortColumn = -1;
     let sortDirection = -1;
@@ -61,7 +62,9 @@
                         <input type=checkbox checked={column.include} on:click={() => changeInclude(i)}>
                     {/if}
                     <span>{column.name}</span>
-                    <button on:click={() => changeSort(i)} class={i == sortColumn ? 'active' : ''}>↕</button>
+                    {#if !disableSort}
+                        <button on:click={() => changeSort(i)} class={i == sortColumn ? 'active' : ''}>↕</button>
+                    {/if}
                 </div>
             </th>
         {/each}

@@ -2,11 +2,12 @@
     <ul>
         <li><a href="/classes">Classes</a></li>
         <li><a href="/units">Units</a></li>
+        <li><a href="/build">Build</a></li>
     </ul>
 </nav>
-<content>
+<main>
     <slot></slot>
-</content>
+</main>
 
 <svelte:head>
     <style>
@@ -64,7 +65,7 @@
         padding: 4px 12px;
         margin: 0;
     }
-    content {
+    main {
         display: block;
         padding: 16px 8px;
     }
