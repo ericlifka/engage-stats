@@ -36,11 +36,18 @@ export const UNIT_LIST = [
     "Mauvier",
     "Anna",
     "Jean",
+    "Nel",
+    "Rafal",
+    "Zelestia",
+    "Gregory",
+    "Madeline"
 ]
 export const CLASS_LIST = [
     "Dragon Child",
     "Divine Dragon",
     "Fell Child",
+    "Fell Child (Nel)",
+    "Fell Child (Rafal)",
     "Noble (Alfred)",
     "Avenir",
     "Noble (Céline)",
@@ -93,6 +100,8 @@ export const CLASS_LIST = [
 export const BASE_CLASS_LIST = [
     "Dragon Child",
     "Fell Child",
+    "Fell Child (Nel)",
+    "Fell Child (Rafal)",
     "Noble (Alfred)",
     "Noble (Céline)",
     "Lord (Diamant)",
@@ -147,6 +156,8 @@ export const PROMOTED_CLASS_LIST = [
 ];
 export const LVL_40_EXCEPTIONS = [
     "Fell Child",
+    "Fell Child (Nel)",
+    "Fell Child (Rafal)",
     "Melusine",
     "Thief",
     "Dancer",
@@ -191,6 +202,11 @@ export const UNITS_RAW = [
     ["Mauvier", 12, "Royal Knight", 51, 21, 23, 25, 22, 26, 24, 16, 12],
     ["Anna", 5, "Axe Fighter", 29, 10, 2, 9, 7, 4, 5, 3, 7],
     ["Jean", 1, "Martial Monk", 19, 4, 5, 10, 7, 4, 8, 3, 3],
+    ["Nel", 20, "Fell Child (Nel)", 35, 14, 12, 17, 19, 14, 15, 16, 8],
+    ["Rafal", 20, "Fell Child (Rafal)", 39, 19, 7, 17, 16, 20, 11, 12, 9],
+    ["Zelestia", 20, "Melusine", 38, 17, 18, 16, 20, 15, 19, 7, 9],
+    ["Gregory", 1, "Sage", 35, 10, 25, 13, 13, 13, 25, 9, 8],
+    ["Madeline", 1, "General", 46, 24, 6, 12, 7, 27, 9, 9, 13],
 ];
 
 export const UNITS_GROWTHS_RAW = {
@@ -230,6 +246,11 @@ export const UNITS_GROWTHS_RAW = {
     "Mauvier": [70, 35, 40, 40, 35, 50, 45, 15, 15],
     "Anna": [55, 15, 50, 50, 50, 20, 35, 45, 5],
     "Jean": [50, 20, 20, 35, 40, 25, 20, 25, 5],
+    "Nel": [55, 30, 25, 40, 45, 30, 35, 30, 10],
+    "Rafal": [70, 40, 10, 40, 35, 45, 20, 10, 10],
+    "Zelestia": [60, 35, 35, 35, 50, 30, 35, 20, 5],
+    "Gregory": [55, 30, 50, 20, 25, 35, 50, 25, 5],
+    "Madeline": [75, 50, 20, 15, 15, 55, 25, 25, 10],
 }
 
 export const CLASS_STATS_RAW = {
@@ -252,7 +273,6 @@ export const CLASS_STATS_RAW = {
     "Picket": [25, 9, 2, 6, 9, 10, 3, 4, 5],
     "Sentinel (Fogado)": [21, 5, 1, 9, 7, 4, 3, 2, 6],
     "Cupido": [23, 6, 3, 10, 8, 5, 5, 3, 7],
-    "Melusine": [22, 7, 8, 6, 8, 6, 9, 2, 6],
     "Sword Fighter": [20, 5, 0, 7, 8, 3, 2, 2, 5],
     "Swordmaster": [21, 6, 1, 9, 11, 4, 3, 4, 6],
     "Hero": [23, 8, 0, 8, 9, 5, 2, 3, 7],
@@ -282,6 +302,9 @@ export const CLASS_STATS_RAW = {
     "Wyvern Knight": [25, 9, 1, 8, 9, 6, 5, 3, 6],
     "Thief": [22, 5, 0, 10, 10, 6, 2, 2, 4],
     "Dancer": [21, 5, 1, 8, 8, 2, 5, 5, 5],
+    "Fell Child (Nel)": [20, 5, 5, 5, 5, 5, 5, 5, 5],
+    "Fell Child (Rafal)": [20, 5, 5, 5, 5, 5, 5, 5, 5],
+    "Melusine": [22, 7, 8, 6, 8, 6, 9, 2, 6],
     "Enchanter": [20, 5, 5, 5, 5, 5, 5, 5, 5],
     "Mage Cannoneer": [20, 5, 5, 5, 5, 5, 5, 5, 5],
 };
@@ -306,7 +329,6 @@ export const CLASS_GROWTHS_RAW = {
     "Picket": [10, 15, 0, 10, 10, 20, 5, 5, 5],
     "Sentinel (Fogado)": [10, 5, 0, 15, 15, 5, 15, 0, 0],
     "Cupido": [10, 5, 5, 20, 20, 5, 20, 0, 0],
-    "Melusine": [10, 10, 10, 10, 15, 10, 10, 0, 5],
     "Sword Fighter": [10, 10, 0, 15, 20, 0, 15, 10, 0],
     "Swordmaster": [10, 10, 0, 15, 20, 0, 15, 15, 0],
     "Hero": [15, 15, 0, 10, 15, 0, 10, 15, 0],
@@ -335,6 +357,9 @@ export const CLASS_GROWTHS_RAW = {
     "Griffin Knight": [0, 10, 15, 15, 20, 0, 15, 15, 0],
     "Wyvern Knight": [20, 20, 0, 10, 5, 20, 5, 5, 5],
     "Thief": [5, 10, 0, 20, 15, 15, 5, 15, 0],
+    "Fell Child (Nel)": [10, 15, 10, 10, 15, 15, 15, 0, 5],
+    "Fell Child (Rafal)": [15, 20, 0, 5, 5, 20, 10, 0, 10],
+    "Melusine": [10, 10, 10, 10, 15, 10, 10, 0, 5],
     "Dancer": [5, 10, 0, 5, 15, 10, 20, 20, 0],
     "Enchanter": [5, 15, 15, 15, 10, 5, 5, 15, 5],
     "Mage Cannoneer": [15, 10, 0, 15, 5, 20, 5, 10, 10],
