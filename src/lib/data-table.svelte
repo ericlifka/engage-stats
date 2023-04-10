@@ -18,12 +18,19 @@
     $: rows = calcRows();
     $: sortedRows = [...rows].sort((a: UnitData, b: UnitData) => sorter(a[sortColumn], b[sortColumn]) * sortDirection);
 
+    function clamp(val: any) {
+        if (typeof val === "number") {
+            return Math.round(val * 100) / 100;
+        }
+        return val;
+    }
+
     function calcRows() {
-        return data.map( row => [...row, sumRow(row)]);
+        return data.map( row => [...(row.map(clamp)), sumRow(row)]);
     }
 
     function sumRow(row: UnitData): number {
-        return row.reduce((sum, val, i) => columns[i].include ? sum + val : sum, 0);
+        return clamp(row.reduce((sum, val, i) => columns[i].include ? sum + val : sum, 0));
     }
 
     function changeInclude(i: number) {
@@ -84,6 +91,9 @@
         border: 1px solid #667;
         padding: 8px;
         min-width: 100px;
+    }
+    td:first-child {
+        min-width: 230px;
     }
     th div {
         display: flex;

@@ -1,6 +1,6 @@
 import { subtract } from '$lib/array-math';
 import { json } from '@sveltejs/kit';
-import { CLASS_STATS_RAW, UNITS_GROWTHS_RAW, UNITS_RAW } from '../raw-data';
+import { CLASS_STATS_RAW, UNITS_GROWTHS_RAW, UNITS_RAW } from '$lib/raw-data';
 
 export function GET() {
     let units = UNITS_RAW.map(([name, lvl, startingClass, ...stats]) => ({
